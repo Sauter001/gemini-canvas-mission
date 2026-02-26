@@ -52,6 +52,7 @@
             border-radius: 1.5rem;
             background: #f8fafc;
         }
+
         .avatar-option.selected {
             border-color: #6366f1;
             background: #eef2ff;
@@ -115,8 +116,14 @@
             z-index: 1;
             filter: blur(1px);
         }
-        .porong-label { color: rgba(14, 165, 233, 0.08); }
-        .dumba-label { color: rgba(245, 158, 11, 0.12); }
+
+        .porong-label {
+            color: rgba(14, 165, 233, 0.08);
+        }
+
+        .dumba-label {
+            color: rgba(245, 158, 11, 0.12);
+        }
 
         /* Avatar */
         .avatar-container {
@@ -136,7 +143,7 @@
             align-items: center;
             justify-content: center;
             font-size: 40px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
             background: white;
             border: 3px solid white;
         }
@@ -169,7 +176,7 @@
             max-width: 260px;
             width: max-content;
             word-wrap: break-word;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -243,8 +250,11 @@
             transition: background 0.1s ease;
             cursor: default;
         }
+
         /* Flickering Fix: No dimension changes on hover, just color */
-        .user-item:hover { background: #f8fafc; }
+        .user-item:hover {
+            background: #f8fafc;
+        }
 
         .goto-btn {
             background: #6366f1;
@@ -255,7 +265,11 @@
             font-weight: bold;
             transition: all 0.2s;
         }
-        .goto-btn:hover { background: #4f46e5; transform: scale(1.05); }
+
+        .goto-btn:hover {
+            background: #4f46e5;
+            transform: scale(1.05);
+        }
 
         /* Sidebar Chat (Discord Style) */
         #chat-sidebar {
@@ -268,7 +282,10 @@
             overflow: hidden;
             flex-shrink: 0;
         }
-        #chat-sidebar.active { width: 380px; }
+
+        #chat-sidebar.active {
+            width: 380px;
+        }
 
         .chat-header {
             padding: 20px;
@@ -293,8 +310,24 @@
             flex-direction: column;
             gap: 2px;
         }
-        .chat-log-name { font-size: 12px; font-weight: 700; color: #6366f1; }
-        .chat-log-text { font-size: 14px; color: #334155; line-height: 1.4; word-break: break-all; background: #f1f5f9; padding: 8px 12px; border-radius: 0 12px 12px 12px; width: fit-content; max-width: 90%; }
+
+        .chat-log-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: #6366f1;
+        }
+
+        .chat-log-text {
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.4;
+            word-break: break-all;
+            background: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 0 12px 12px 12px;
+            width: fit-content;
+            max-width: 90%;
+        }
 
         .sidebar-chat-input-area {
             padding: 16px;
@@ -336,7 +369,11 @@
             font-size: 16px;
             transition: all 0.2s;
         }
-        .input-pill:focus { border-color: #6366f1; background: white; }
+
+        .input-pill:focus {
+            border-color: #6366f1;
+            background: white;
+        }
 
         .btn-pill {
             background: #6366f1;
@@ -346,12 +383,16 @@
             font-weight: bold;
             transition: all 0.2s;
         }
-        .btn-pill:hover { background: #4f46e5; }
+
+        .btn-pill:hover {
+            background: #4f46e5;
+        }
 
         /* Notification Icon wrapper */
         #chat-sidebar-toggle-wrapper {
             position: relative;
         }
+
         #chat-sidebar-toggle {
             width: 56px;
             height: 56px;
@@ -364,8 +405,14 @@
             box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
             transition: all 0.2s;
         }
-        #chat-sidebar-toggle:hover { transform: scale(1.1); }
-        #chat-sidebar-toggle.active { background: #ef4444; }
+
+        #chat-sidebar-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        #chat-sidebar-toggle.active {
+            background: #ef4444;
+        }
 
         #unread-dot {
             position: absolute;
@@ -392,24 +439,33 @@
         <div class="space-y-8">
             <div>
                 <label class="block text-sm font-bold text-slate-700 mb-3 ml-1">크루 닉네임</label>
-                <input type="text" id="input-nickname" maxlength="12" placeholder="닉네임을 입력하세요" class="w-full px-6 py-4 border-2 border-slate-100 rounded-2xl focus:border-indigo-500 outline-none transition-all font-sans text-lg">
+                <input type="text" id="input-nickname" maxlength="12" placeholder="닉네임을 입력하세요"
+                       class="w-full px-6 py-4 border-2 border-slate-100 rounded-2xl focus:border-indigo-500 outline-none transition-all font-sans text-lg">
             </div>
 
             <div>
                 <label class="block text-sm font-bold text-slate-700 mb-3 ml-1">입장할 마을</label>
                 <div class="grid grid-cols-2 gap-4">
-                    <button onclick="selectVillage('porong')" id="btn-sel-porong" class="py-4 rounded-2xl border-2 border-indigo-500 bg-indigo-50 text-indigo-700 font-bold transition-all shadow-sm">❄️ 뽀롱뽀롱</button>
-                    <button onclick="selectVillage('dumba')" id="btn-sel-dumba" class="py-4 rounded-2xl border-2 border-slate-100 bg-slate-50 text-slate-400 font-bold transition-all shadow-sm">☀️ 둠바 부족</button>
+                    <button onclick="selectVillage('porong')" id="btn-sel-porong"
+                            class="py-4 rounded-2xl border-2 border-indigo-500 bg-indigo-50 text-indigo-700 font-bold transition-all shadow-sm">
+                        ❄️ 뽀롱뽀롱
+                    </button>
+                    <button onclick="selectVillage('dumba')" id="btn-sel-dumba"
+                            class="py-4 rounded-2xl border-2 border-slate-100 bg-slate-50 text-slate-400 font-bold transition-all shadow-sm">
+                        ☀️ 둠바 부족
+                    </button>
                 </div>
             </div>
 
             <div>
                 <label class="block text-sm font-bold text-slate-700 mb-3 ml-1">캐릭터 선택</label>
-                <div id="avatar-list" class="flex flex-wrap gap-4 justify-center py-5 bg-slate-50 rounded-3xl p-4 border border-slate-100">
+                <div id="avatar-list"
+                     class="flex flex-wrap gap-4 justify-center py-5 bg-slate-50 rounded-3xl p-4 border border-slate-100">
                 </div>
             </div>
 
-            <button onclick="enterWorld()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-5 rounded-2xl text-2xl font-bold shadow-2xl transition-all transform active:scale-95 mt-4">
+            <button onclick="enterWorld()"
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-5 rounded-2xl text-2xl font-bold shadow-2xl transition-all transform active:scale-95 mt-4">
                 월드 입장하기
             </button>
         </div>
@@ -417,10 +473,12 @@
 </div>
 
 <!-- Header Interface -->
-<header id="top-bar" class="hidden fixed top-0 left-0 right-0 h-[80px] bg-white/90 backdrop-blur-md border-b px-8 flex items-center justify-between z-[1300]">
+<header id="top-bar"
+        class="hidden fixed top-0 left-0 right-0 h-[80px] bg-white/90 backdrop-blur-md border-b px-8 flex items-center justify-between z-[1300]">
     <h1 class="text-2xl font-black text-indigo-600 tracking-tighter">🪐 우아한 메타버스</h1>
 
-    <button onclick="toggleUserList()" id="player-count-btn" class="flex items-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-full transition-all shadow-lg">
+    <button onclick="toggleUserList()" id="player-count-btn"
+            class="flex items-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-full transition-all shadow-lg">
         <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2.5"></div>
         <span id="player-count-text" class="text-sm font-bold">접속 중: 1명</span>
     </button>
@@ -454,7 +512,8 @@
         <div class="chat-header">전체 채팅 로그 (디스코드 스타일)</div>
         <div id="chat-messages"></div>
         <form id="sidebar-chat-form" class="sidebar-chat-input-area">
-            <input type="text" id="sidebar-chat-input" maxlength="50" placeholder="글로벌 채팅 입력..." autocomplete="off" class="flex-1 bg-slate-100 rounded-lg px-4 py-2 text-sm outline-none">
+            <input type="text" id="sidebar-chat-input" maxlength="50" placeholder="글로벌 채팅 입력..." autocomplete="off"
+                   class="flex-1 bg-slate-100 rounded-lg px-4 py-2 text-sm outline-none">
             <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-bold text-xs">전송</button>
         </form>
     </aside>
@@ -464,15 +523,18 @@
 <footer id="bottom-menu" class="hidden">
     <div class="flex-1"></div>
     <form id="central-bubble-form" class="central-chat-form">
-        <input type="text" id="central-bubble-input" maxlength="50" placeholder="크루들에게 인사해보세요!" autocomplete="off" class="input-pill">
+        <input type="text" id="central-bubble-input" maxlength="50" placeholder="크루들에게 인사해보세요!" autocomplete="off"
+               class="input-pill">
         <button type="submit" class="btn-pill">보내기</button>
     </form>
     <div class="flex-1 flex justify-end items-center">
         <div id="chat-sidebar-toggle-wrapper">
             <div id="unread-dot"></div>
             <div id="chat-sidebar-toggle" onclick="toggleSidebarChat()">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                 </svg>
             </div>
         </div>
@@ -480,13 +542,26 @@
 </footer>
 
 <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-    import { getFirestore, doc, setDoc, onSnapshot, collection, serverTimestamp, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import {
+        getAuth,
+        signInAnonymously,
+        signInWithCustomToken,
+        onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import {
+        getFirestore,
+        doc,
+        setDoc,
+        onSnapshot,
+        collection,
+        serverTimestamp,
+        addDoc
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
     const firebaseConfig = typeof __firebase_config !== 'undefined'
         ? JSON.parse(__firebase_config)
-        : { apiKey: "", authDomain: "", projectId: "", storageBucket: "", messagingSenderId: "", appId: "" };
+        : {apiKey: "", authDomain: "", projectId: "", storageBucket: "", messagingSenderId: "", appId: ""};
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
@@ -507,7 +582,7 @@
         myName: '',
         players: {},
         messages: [],
-        myPos: { x: 10, y: 50 },
+        myPos: {x: 10, y: 50},
         keys: {},
         cameraX: 0,
         cameraY: 0,
@@ -554,7 +629,7 @@
         if (!name) return;
         STATE.myName = name;
         STATE.isLoggedIn = true;
-        STATE.myPos = STATE.myVillage === 'porong' ? { x: 10, y: 50 } : { x: 90, y: 50 };
+        STATE.myPos = STATE.myVillage === 'porong' ? {x: 10, y: 50} : {x: 90, y: 50};
 
         DOM.loginScreen.style.display = 'none';
         DOM.mainContainer.classList.remove('hidden');
@@ -576,7 +651,9 @@
             DOM.sidebarChat.classList.add('active');
             DOM.sidebarToggle.classList.add('active');
             DOM.unreadDot.style.display = 'none';
-            setTimeout(() => { DOM.chatMessages.scrollTop = DOM.chatMessages.scrollHeight; }, 300);
+            setTimeout(() => {
+                DOM.chatMessages.scrollTop = DOM.chatMessages.scrollHeight;
+            }, 300);
         } else {
             DOM.sidebarChat.classList.remove('active');
             DOM.sidebarToggle.classList.remove('active');
@@ -621,7 +698,8 @@
             }
         };
 
-        initAuth().catch(() => {});
+        initAuth().catch(() => {
+        });
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 STATE.user = user;
@@ -640,7 +718,7 @@
 
     function setupDecorations() {
         const createDeco = (parent, list, count) => {
-            for(let i=0; i<count; i++) {
+            for (let i = 0; i < count; i++) {
                 const d = document.createElement('div');
                 d.className = 'deco-item';
                 d.innerText = list[Math.floor(Math.random() * list.length)];
@@ -702,8 +780,9 @@
             await setDoc(playerRef, {
                 uid: STATE.myId, name: STATE.myName, avatar: STATE.myAvatar,
                 x: STATE.myPos.x, y: STATE.myPos.y, updatedAt: serverTimestamp(), ...extra
-            }, { merge: true });
-        } catch (e) {}
+            }, {merge: true});
+        } catch (e) {
+        }
     }
 
     async function handleSendSpeechBubble(e) {
@@ -715,13 +794,14 @@
         try {
             if (STATE.players[STATE.myId]) STATE.players[STATE.myId].msg = val;
             renderPlayers();
-            await updateMyRemoteData({ msg: val });
+            await updateMyRemoteData({msg: val});
             setTimeout(async () => {
                 if (STATE.players[STATE.myId]) STATE.players[STATE.myId].msg = "";
-                await updateMyRemoteData({ msg: "" });
+                await updateMyRemoteData({msg: ""});
                 renderPlayers();
             }, 3000);
-        } catch (e) {}
+        } catch (e) {
+        }
     }
 
     async function handleSendGlobalMessage(e) {
@@ -737,7 +817,8 @@
                 text: val,
                 createdAt: serverTimestamp()
             });
-        } catch (e) {}
+        } catch (e) {
+        }
     }
 
     function renderChatLog() {
@@ -780,11 +861,15 @@
 
     function createPlayerElement(uid, name, avatar, isMe) {
         const container = document.createElement('div');
-        container.id = uid; container.className = 'avatar-container';
-        const bubble = document.createElement('div'); bubble.className = 'speech-bubble';
-        const av = document.createElement('div'); av.className = `avatar ${isMe ? 'me' : ''}`;
+        container.id = uid;
+        container.className = 'avatar-container';
+        const bubble = document.createElement('div');
+        bubble.className = 'speech-bubble';
+        const av = document.createElement('div');
+        av.className = `avatar ${isMe ? 'me' : ''}`;
         av.innerText = avatar || '👤';
-        const nameTag = document.createElement('div'); nameTag.className = 'avatar-name';
+        const nameTag = document.createElement('div');
+        nameTag.className = 'avatar-name';
         nameTag.innerText = name + (isMe ? ' (나)' : '');
         container.append(bubble, av, nameTag);
         return container;
