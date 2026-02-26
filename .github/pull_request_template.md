@@ -64,7 +64,7 @@ Java 버그 헌터
 
 ### 배포 링크
 
-https://gemini.google.com/share/f1ef0c9dea30
+https://gemini.google.com/share/ad6e12f49d07
 
 ### 이 앱을 만든 이유
 
